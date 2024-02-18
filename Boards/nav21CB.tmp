@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdq72cdl7wd4m"]
+
+[ext_resource type="Texture2D" uid="uid://duw1an8dca8oq" path="res://Boards/Space Background.png" id="1_wrtvj"]
+[ext_resource type="AudioStream" uid="uid://dqks54c7e47f0" path="res://Boards/7. Frozen Star.mp3" id="2_7w6ck"]
+[ext_resource type="PackedScene" uid="uid://3uyhjmjyhvcv" path="res://Fleet/fleet.tscn" id="3_6qwo5"]
+
+[node name="Navigation" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_wrtvj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_7w6ck")
+autoplay = true
+
+[node name="Fleet" parent="." instance=ExtResource("3_6qwo5")]
+
+[node name="Camera2D" type="Camera2D" parent="Fleet"]
+zoom = Vector2(0.5, 0.5)
